@@ -14,7 +14,7 @@ return (
                         md: `"nav" "main"` ,
                         lg: `"nav nav" "aside main"`}}>
 
-    <GridItem area= 'nav' boxSize='60px'>
+    <GridItem area= 'nav' >
       <NavBar />
     </GridItem>
 
