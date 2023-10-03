@@ -1,11 +1,11 @@
-import {Grid, GridItem, Show} from '@chakra-ui/react'
+import {Grid, GridItem, Show, ThemeConfig} from '@chakra-ui/react'
 import NavBar from './Components/NavBar'
 
 
 
-function App() {
+function App( theme: ThemeConfig) {
 
-
+ console.log(theme.initialColorMode)
   
 return (
  <>
