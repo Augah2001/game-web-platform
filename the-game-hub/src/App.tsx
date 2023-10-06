@@ -1,11 +1,12 @@
-import {Grid, GridItem, Show, ThemeConfig} from '@chakra-ui/react'
+import {Grid, GridItem, Show} from '@chakra-ui/react'
 import NavBar from './Components/NavBar'
+import GameGrid from './Components/GameGrid'
 
 
 
-function App( theme: ThemeConfig) {
+function App() {
 
- console.log(theme.initialColorMode)
+
   
 return (
  <>
@@ -18,12 +19,12 @@ return (
       <NavBar />
     </GridItem>
 
-    <GridItem area = 'main' bg = 'orange'>
-      main
+    <GridItem area = 'main' >
+      <GameGrid/>
     </GridItem>
 
     <Show above='lg'>
-    <GridItem  area='aside' bg='gold'>
+    <GridItem  area='aside'>
       Aside
     </GridItem>
     </Show>
