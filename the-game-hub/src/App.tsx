@@ -4,8 +4,8 @@ import GameGrid from './Components/GameGrid'
 
 
 
-function App() {
 
+function App() {
 
   
 return (
