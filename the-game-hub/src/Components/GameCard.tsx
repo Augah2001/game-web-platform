@@ -12,7 +12,7 @@ const GameCard = ({ game }: props) => {
 
     console.log(getCroppedImage(game.background_image))
   return (
-    <Card overflow="hidden" borderRadius="10px">
+    <Card overflow="hidden" borderRadius="10px" width='100%'>
       <Image src={getCroppedImage(game.background_image)} />
       <CardBody>
         <Heading fontSize="2xl">{game.name}</Heading>
