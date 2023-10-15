@@ -10,7 +10,6 @@ export interface props {
 
 const GameCard = ({ game }: props) => {
 
-    console.log(getCroppedImage(game.background_image))
   return (
     <Card>
       <Image src={getCroppedImage(game.background_image)} />
@@ -19,7 +18,7 @@ const GameCard = ({ game }: props) => {
         <HStack marginTop={1} justifyContent="space-between">
           <HStack>
             {game.parent_platforms.map(({ platform }) => (
-              <PlatformListIcons key={game.id} platform={platform}></PlatformListIcons>
+              <PlatformListIcons key={platform.id} platform={platform}></PlatformListIcons>
             ))}
           </HStack>
 

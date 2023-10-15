@@ -6,13 +6,13 @@ import GameCardContainer from "./GameCardContainer";
 
 const GameGrid = () => {
   const { games, error, isLoading } = useFetchGames();
-  const skeletons = [1, 2, 3, 4, 5, 6];
+  const skeletons = [1, 2, 3, 4, 5, 6,7,8];
 
   return (
     <SimpleGrid
       columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-      spacing="10"
-      padding="10"
+      spacing= {3}
+      padding="10px"
     >
       {error && <Text>{error}</Text>}
       {isLoading &&

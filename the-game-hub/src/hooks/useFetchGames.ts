@@ -27,9 +27,13 @@ const useFetchGames = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false)
+  
+  
+  
+  
+  
   useEffect(() => {
     const controller = new AbortController();
-
 
     setIsLoading(true)
     apiClient
