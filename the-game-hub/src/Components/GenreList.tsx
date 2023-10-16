@@ -1,23 +1,42 @@
-import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
-import useFetchGenres from "../hooks/useFetchGenres";
+import {
+  Button,
+  HStack,
+  Image,
+  List,
+  ListItem,
+  Spinner,
+} from "@chakra-ui/react";
+import useGenres, { Genre } from "../hooks/useGenres";
 import { getCroppedImage } from "../services/getCroppedImage";
 
-const GenreCard = () => {
-  const { genres, isLoading, error } = useFetchGenres();
+interface props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: props) => {
+  const { data, isLoading, error } = useGenres();
 
   if (error) return null;
-  if (isLoading == true) return <Spinner/>
-
-  
-  
+  if (isLoading == true) return <Spinner />;
 
   return (
     <List>
-      {genres?.map((genre) => (
-        <ListItem  paddingY= '4px'  key={genre.id}>
+      {data?.map((genre) => (
+        <ListItem paddingY="4px" key={genre.id}>
           <HStack>
-            <Image  borderRadius = "5px" boxSize= "32px" src={getCroppedImage(genre.image_background)} alt={genre.name} />
-            <Text fontSize= "lg" >{genre.name}</Text>
+            <Image
+              borderRadius="5px"
+              boxSize="32px"
+              src={getCroppedImage(genre.image_background)}
+              alt={genre.name}
+            />
+            <Button
+              onClick={() => onSelectGenre(genre)}
+              fontSize="lg"
+              variant="list"
+            >
+              {genre.name}
+            </Button>
           </HStack>
         </ListItem>
       ))}
@@ -25,4 +44,4 @@ const GenreCard = () => {
   );
 };
 
-export default GenreCard;
+export default GenreList;
