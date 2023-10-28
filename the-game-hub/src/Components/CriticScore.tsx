@@ -1,5 +1,4 @@
-import { Badge } from "@chakra-ui/react";
-
+import { Badge } from "@chakra-ui/react"
 interface props {
   score: number;
 }

@@ -1,5 +1,4 @@
 import useData, { platform } from "./useData";
-import { Genre } from "./useGenres";
 
 export interface Platform {
   name: string;
@@ -7,9 +6,6 @@ export interface Platform {
   slug: string;
 }
 
-const usePlatforms = () =>
-  useData<Platform>(
-    "/platforms/lists/parents"
-  );
+const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
 
 export default usePlatforms;
