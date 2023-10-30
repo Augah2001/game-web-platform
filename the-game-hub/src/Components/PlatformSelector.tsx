@@ -29,6 +29,7 @@ const PlatformSelector = ({ onSelectPlatform, gameQuery }: Props) => {
         {platformText || "platform"}
       </MenuButton>
       <MenuList>
+        <MenuItem color= "gray.300" onClick={() => {onSelectPlatform(null)}}>platform</MenuItem>
         {data.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}
