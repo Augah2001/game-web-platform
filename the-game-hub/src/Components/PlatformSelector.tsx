@@ -21,7 +21,7 @@ const PlatformSelector = ({ onSelectPlatform, gameQuery }: Props) => {
   if (isLoading) return <Spinner />;
   if (error) return null;
 
-  const platformText = gameQuery.platform?.name; 
+  const platformText = gameQuery.platform?.name;
 
   return (
     <Menu>
@@ -29,7 +29,14 @@ const PlatformSelector = ({ onSelectPlatform, gameQuery }: Props) => {
         {platformText || "platform"}
       </MenuButton>
       <MenuList>
-        <MenuItem color= "gray.300" onClick={() => {onSelectPlatform(null)}}>platform</MenuItem>
+        <MenuItem
+          color="gray.300"
+          onClick={() => {
+            onSelectPlatform(null);
+          }}
+        >
+          platform
+        </MenuItem>
         {data.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}

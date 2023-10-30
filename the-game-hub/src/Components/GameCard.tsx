@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformListIcons from "./PlatformListIcons";
 import CriticScore from "./CriticScore";
 import { getCroppedImage } from "../services/getCroppedImage";
+import Emoji from "./Emoji";
 
 export interface props {
   game: Game;
@@ -10,7 +11,7 @@ export interface props {
 
 const GameCard = ({ game }: props) => {
   return (
-    <Card>
+    <Card >
       <Image src={getCroppedImage(game.background_image)} />
       <CardBody>
         <HStack marginBottom={3} marginTop={1} justifyContent="space-between">
@@ -25,6 +26,7 @@ const GameCard = ({ game }: props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl">{game.name}</Heading>
+        <Emoji rating={game.rating_top}/>
       </CardBody>
     </Card>
   );

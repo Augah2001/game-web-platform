@@ -18,7 +18,6 @@ export interface GameQuery {
 
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  const [selectedPlaform, setSelectedPlatform] = useState('')
 
   console.log(gameQuery);
 
