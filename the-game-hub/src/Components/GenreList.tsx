@@ -1,6 +1,7 @@
 import {
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -21,6 +22,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: props) => {
   if (isLoading == true) return <Spinner />;
 
   return (
+
+    <>
+    <Heading fontSize = "2xl" marginBottom = {3} >Genres</Heading>  
     <List marginTop={5}>
       {data?.map((genre) => (
         <ListItem paddingY="4px" key={genre.id}>
@@ -30,6 +34,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: props) => {
               boxSize="32px"
               src={getCroppedImage(genre.image_background)}
               alt={genre.name}
+              objectFit="cover"
             />
             <Button
               backgroundColor={
@@ -46,6 +51,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: props) => {
         </ListItem>
       ))}
     </List>
+    </>
   );
 };
 
