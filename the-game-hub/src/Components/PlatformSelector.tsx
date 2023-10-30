@@ -9,20 +9,24 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms from "../hooks/usePlatforms";
 import { platform } from "../hooks/useData";
+import { GameQuery } from "../App";
 
 interface Props {
   onSelectPlatform: (platform: platform | null) => void;
+  gameQuery: GameQuery;
 }
 
-const PlatformSelector = ({ onSelectPlatform }: Props) => {
+const PlatformSelector = ({ onSelectPlatform, gameQuery }: Props) => {
   const { data, error, isLoading } = usePlatforms();
   if (isLoading) return <Spinner />;
   if (error) return null;
 
+  const platformText = gameQuery.platform?.name; 
+
   return (
     <Menu>
-      <MenuButton marginLeft={2} as={Button} rightIcon={<BsChevronDown />}>
-        Platiform
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+        {platformText || "platform"}
       </MenuButton>
       <MenuList>
         {data.map((platform) => (
