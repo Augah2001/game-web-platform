@@ -11,7 +11,7 @@ export interface props {
 
 const GameCard = ({ game }: props) => {
   return (
-    <Card >
+    <Card>
       <Image src={getCroppedImage(game.background_image)} />
       <CardBody>
         <HStack marginBottom={3} marginTop={1} justifyContent="space-between">
@@ -26,7 +26,7 @@ const GameCard = ({ game }: props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl">{game.name}</Heading>
-        <Emoji rating={game.rating_top}/>
+        <Emoji rating={game.rating_top} />
       </CardBody>
     </Card>
   );
